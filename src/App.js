@@ -196,7 +196,6 @@ const App = () => {
       <Fragment key={dataSource.id}>
         <Box
           position="relative"
-          top={{ base: index % 2 === 0 ? 0 : '-58px', md: 0 }}
           bg="white"
           px={{ base: 0, md: 6 }}
           pt={index > 0 ? { base: 4, md: 14, xl: 28 } : { base: 4, md: 14, xl: 0 }}
@@ -227,13 +226,22 @@ const App = () => {
         {!isLargerThan767 &&
           <Box
             position="relative"
-            top={index % 2 === 0 ? 0 : '-58px'}
+            top={0}
+            
           >
             {dataSource.image(index)}
             <Box
               position="relative"
-              top={index % 2 === 0 ? "-58px" : '-38px'}
               zIndex="2"
+              _before={{
+                content: "''",
+                position: "absolute",
+                top: index % 2 === 0 ? "-55px" : "-35px",
+                left: 0,
+                w: "full",
+                h: index % 2 === 0 ? "55px" : "35px",
+                bg: "global.100"
+              }}
             >
               <Swiper
                 initialSlide={0}
@@ -252,7 +260,7 @@ const App = () => {
                     <DetailItem 
                       index={index}
                       detail={detail}
-                      py="70px"
+                      pb="70px"
                     />
                   </SwiperSlide>
                 )}
