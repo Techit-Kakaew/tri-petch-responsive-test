@@ -156,7 +156,7 @@ const dataSources = [
           </Box>
           <Box
             position="absolute"
-            bottom={{ base: "47%" }}
+            bottom={{ base: "32%", lg: "47%" }}
             left="50%"
             transform={{ base: "translateX(114px)", md: "translateX(190px)", xl: "translateX(280px)" }}
           >
